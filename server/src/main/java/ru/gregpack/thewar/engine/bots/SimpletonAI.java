@@ -45,6 +45,6 @@ public class SimpletonAI implements AI {
 
     @Override
     public String getName() {
-        return "Simpleton";
+        return "Simpleton1";
     }
 }
