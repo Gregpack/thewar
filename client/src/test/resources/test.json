@@ -1,0 +1,46 @@
+{
+  "gameStatus": "IN_PROGRESS",
+  "gameState": {
+    "barracks": {
+      "0": {
+        "id": 0,
+        "x": 1,
+        "y": 2,
+        "spawnX": 2,
+        "spawnY": 5,
+        "playerId": 0,
+        "unitType": "CAVALRY"
+      },
+      "1": {
+        "id": 1,
+        "x": 71,
+        "y": 2,
+        "spawnX": 72,
+        "spawnY": 5,
+        "playerId": 1,
+        "unitType": "CAVALRY"
+      }
+    },
+    "units": {},
+    "players": {
+      "0": {
+        "id": 0,
+        "money": 1650,
+        "name": "Simpleton"
+      },
+      "1": {
+        "id": 1,
+        "money": 1930,
+        "name": "Simpleton"
+      }
+    },
+    "attackActions": [
+      {
+        "performerId": 1,
+        "attackedId": 1
+      }
+    ],
+    "moveActions": []
+  },
+  "gameWinner": null
+}

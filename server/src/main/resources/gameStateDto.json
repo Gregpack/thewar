@@ -1,0 +1,130 @@
+{
+  "barracks": [
+    {
+      "x": 3,
+      "y": 3,
+      "id": 0,
+      "spawnX": 3,
+      "spawnY": 1,
+      "spawnProgress": 0.3333333333333333,
+      "playerId": 0
+    },
+    {
+      "x": 27,
+      "y": 3,
+      "id": 1,
+      "spawnX": 27,
+      "spawnY": 1,
+      "spawnProgress": 0.3333333333333333,
+      "playerId": 1
+    },
+    {
+      "x": 3,
+      "y": 8,
+      "id": 2,
+      "spawnX": 3,
+      "spawnY": 6,
+      "spawnProgress": 0.3333333333333333,
+      "playerId": 0
+    },
+    {
+      "x": 27,
+      "y": 8,
+      "id": 3,
+      "spawnX": 27,
+      "spawnY": 6,
+      "spawnProgress": 0.3333333333333333,
+      "playerId": 1
+    }
+  ],
+  "units": [
+    {
+      "x": 5,
+      "y": 1,
+      "id": 4,
+      "healthPoints": 20.0,
+      "speed": 1,
+      "attack": {
+        "attackPower": 10,
+        "attackRange": 1,
+        "attackType": "Normal"
+      },
+      "armor": {
+        "armorAmount": 2,
+        "armorType": "Normal"
+      },
+      "currentBehaviour": "DEFAULT",
+      "behaviourTriggerUnitId": 0,
+      "unitType": "FOOTMAN",
+      "playerId": 0
+    },
+    {
+      "x": 25,
+      "y": 1,
+      "id": 5,
+      "healthPoints": 20.0,
+      "speed": 1,
+      "attack": {
+        "attackPower": 10,
+        "attackRange": 1,
+        "attackType": "Normal"
+      },
+      "armor": {
+        "armorAmount": 2,
+        "armorType": "Normal"
+      },
+      "currentBehaviour": "DEFAULT",
+      "behaviourTriggerUnitId": 0,
+      "unitType": "FOOTMAN",
+      "playerId": 1
+    },
+    {
+      "x": 5,
+      "y": 6,
+      "id": 6,
+      "healthPoints": 20.0,
+      "speed": 1,
+      "attack": {
+        "attackPower": 10,
+        "attackRange": 1,
+        "attackType": "Normal"
+      },
+      "armor": {
+        "armorAmount": 2,
+        "armorType": "Normal"
+      },
+      "currentBehaviour": "DEFAULT",
+      "behaviourTriggerUnitId": 0,
+      "unitType": "FOOTMAN",
+      "playerId": 0
+    },
+    {
+      "x": 25,
+      "y": 6,
+      "id": 7,
+      "healthPoints": 20.0,
+      "speed": 1,
+      "attack": {
+        "attackPower": 10,
+        "attackRange": 1,
+        "attackType": "Normal"
+      },
+      "armor": {
+        "armorAmount": 2,
+        "armorType": "Normal"
+      },
+      "currentBehaviour": "DEFAULT",
+      "behaviourTriggerUnitId": 0,
+      "unitType": "FOOTMAN",
+      "playerId": 1
+    }
+  ],
+  "players": [
+    {
+      "playerId": 0
+    },
+    {
+      "playerId": 1
+    }
+  ]
+}

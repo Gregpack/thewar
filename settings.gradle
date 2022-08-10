@@ -1,0 +1,6 @@
+rootProject.name = 'thewar'
+include 'common'
+include 'server'
+include 'visualiser'
+include 'client'
+
