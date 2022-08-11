@@ -19,6 +19,7 @@ import ru.gregpack.thewar.model.repositories.PlayerInMemoryRepository;
 import ru.gregpack.thewar.model.repositories.UnitInMemoryRepository;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Singleton
@@ -112,7 +113,7 @@ public class UnitService implements UnitSubscriber {
         );
     }
 
-    public List<Unit> getUnits() {
+    public Collection<Unit> getUnits() {
         return unitRepository.getUnits();
     }
 

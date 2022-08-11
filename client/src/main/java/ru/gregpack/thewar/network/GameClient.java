@@ -39,7 +39,6 @@ public class GameClient {
         RegisterConfirmMessage answer = objectMapper.readValue(socket.getInputStream(), RegisterConfirmMessage.class);
         moveProducer.initAI(answer.getPlayerId());
         logger.info("Connection successful: {}", answer);
-        moveProducer = new JNIMoveProducer(objectMapper);
     }
 
     public void run() {
@@ -54,7 +53,7 @@ public class GameClient {
                 OrderMessage orderMessage = moveProducer.nextOrders(nextDto.getGameState());
                 objectMapper.writeValue(socket.getOutputStream(), orderMessage);
             } catch (JsonProcessingException e) {
-                System.err.println(e.getMessage());
+                //System.err.println(e.getMessage());
             } catch (IOException e) {
                 System.err.println(e.getMessage());
                 break;

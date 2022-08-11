@@ -215,11 +215,6 @@ public abstract class Unit extends Entity {
                 }
                 break;
             case BATTLE: {
-                if (getDesignatedTarget() != null) {
-                    Unit enemy = getDesignatedTarget();
-                    this.attackUnit(enemy, gameState);
-                    return;
-                }
                 Unit enemyTarget;
                 if (getDesignatedTarget() != null) {
                     enemyTarget = getDesignatedTarget();
@@ -227,7 +222,7 @@ public abstract class Unit extends Entity {
                     enemyTarget = gameState.getUnitService().findClosestEnemyUnitInRange(this, battleRange);
                 }
                 if (enemyTarget == null) {
-                    currentBehaviour = Behaviour.BATTLE_EXPECTED;
+                    currentBehaviour = Behaviour.DEFAULT;
                     move(gameState.getUnitService().getUnitDefaultDirection(getId()));
                     return;
                 }

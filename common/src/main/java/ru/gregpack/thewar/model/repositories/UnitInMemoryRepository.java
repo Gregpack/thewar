@@ -22,7 +22,7 @@ public class UnitInMemoryRepository {
         this.playerRepository = playerRepository;
     }
 
-    public List<Unit> getUnits() {
+    public Collection<Unit> getUnits() {
         return new ArrayList<>(unitById.values());
     }
 

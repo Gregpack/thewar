@@ -12,10 +12,7 @@ import ru.gregpack.thewar.model.repositories.BarrackInMemoryRepository;
 import ru.gregpack.thewar.model.repositories.PlayerInMemoryRepository;
 import ru.gregpack.thewar.utils.PropertyUtil;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 @Singleton
 public class BarrackService {
@@ -88,7 +85,7 @@ public class BarrackService {
         return barrackCost.get(unitType.toString().toLowerCase(Locale.ROOT));
     }
 
-    public List<Barrack<?>> getBarracks() {
+    public Collection<Barrack<?>> getBarracks() {
         return barrackRepository.getBarracks();
     }
 

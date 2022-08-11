@@ -5,10 +5,7 @@ import com.google.inject.Singleton;
 import ru.gregpack.thewar.model.entities.BarrackInfo;
 import ru.gregpack.thewar.model.entities.composite.units.Barrack;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Singleton
 public class BarrackInMemoryRepository {
@@ -53,7 +50,7 @@ public class BarrackInMemoryRepository {
         return new ArrayList<>(barrackByIdMap.keySet());
     }
 
-    public List<Barrack<?>> getBarracks() {
+    public Collection<Barrack<?>> getBarracks() {
         return new ArrayList<>(barrackByIdMap.values());
     }
 }

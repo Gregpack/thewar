@@ -55,7 +55,7 @@ public class ViewerClient {
                 } catch (SocketTimeoutException ignored) {
                     continue;
                 } catch (JsonProcessingException e) {
-                    System.err.println(e.getMessage());
+                    //System.err.println(e.getMessage());
                     continue;
                 } catch (IOException e) {
                     System.err.println(e.getMessage());
