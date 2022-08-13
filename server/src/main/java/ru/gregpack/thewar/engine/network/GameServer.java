@@ -33,6 +33,7 @@ public class GameServer {
     private final ObjectMapper objectMapper;
     private final GameStateMapper gameStateMapper;
     private final List<PlayerAdapter> adapters = new ArrayList<>();
+    private boolean isGameStarted = false;
 
     private int players = 0;
     private boolean isGameFinished = false;
@@ -89,7 +90,8 @@ public class GameServer {
                         players++;
                     }
 
-                    if (players == MAX_PLAYERS) {
+                    if (players == MAX_PLAYERS && !isGameStarted) {
+                        isGameStarted = true;
                         launchGame();
                     }
                 }

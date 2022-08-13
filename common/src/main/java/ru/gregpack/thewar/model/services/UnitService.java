@@ -109,7 +109,7 @@ public class UnitService implements UnitSubscriber {
     public Unit findClosestEnemyUnitInRange(Unit searcher, int range) {
         int ownerId = getUnitOwnerId(searcher.getId());
         return gameField.findClosestUnitConditional(searcher.getPosition(), range, unit ->
-                getUnitOwnerId(unit.getId()) != ownerId
+                unit.isAlive() && getUnitOwnerId(unit.getId()) != ownerId
         );
     }
 
@@ -145,7 +145,7 @@ public class UnitService implements UnitSubscriber {
 
     public void removeDeadBodies() {
         for (Unit unit : unitRepository.getUnits()) {
-            if (Double.compare(unit.getHealthPoints(), 0) == 0) {
+            if (!unit.isAlive()) {
                 if (logger.isDebugEnabled()) {
                     logger.debug("Unit {} is now dead.", unit);
                 }
@@ -160,7 +160,7 @@ public class UnitService implements UnitSubscriber {
         if (logger.isDebugEnabled()) {
             logger.debug("Unit {} attacked {}.", attacker, attacked);
         }
-        if (Double.compare(attacked.getHealthPoints(), 0) == 0) {
+        if (!attacked.isAlive()) {
             //if (logger.isDebugEnabled()) {
             //    logger.debug("Unit {} is now dead.", attacked);
             //}

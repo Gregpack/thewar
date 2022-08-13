@@ -51,7 +51,9 @@ public class GameClient {
                     break;
                 }
                 OrderMessage orderMessage = moveProducer.nextOrders(nextDto.getGameState());
-                objectMapper.writeValue(socket.getOutputStream(), orderMessage);
+                if (!orderMessage.getOrders().isEmpty()) {
+                    objectMapper.writeValue(socket.getOutputStream(), orderMessage);
+                }
             } catch (JsonProcessingException e) {
                 //System.err.println(e.getMessage());
             } catch (IOException e) {
@@ -64,10 +66,6 @@ public class GameClient {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void shutdown() {
-        this.isDown = true;
     }
 
     private void configureObjectMapper() {

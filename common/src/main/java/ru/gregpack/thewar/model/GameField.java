@@ -87,7 +87,7 @@ public class GameField {
     }
 
     public void removeEntity(Entity entity) {
-        gameField[entity.getPosition().getY()][entity.getPosition().getX()].removeOccupantById(entity.getId());
+        removeUnit(entity.getPosition(), entity.getId());
     }
 
     public void removeBarrack(Barrack<?> barrack) {

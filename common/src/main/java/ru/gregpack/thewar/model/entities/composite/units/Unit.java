@@ -112,7 +112,8 @@ public abstract class Unit extends Entity {
         }
     }
 
-    protected void useSkill(SkillActivator skillActivator) {}
+    protected void useSkill(SkillActivator skillActivator) {
+    }
 
     private void attackUnit(Unit enemy, GameState gameState) {
         if (!enemy.isInRange(this, attack.getAttackRange()) &&
@@ -137,11 +138,9 @@ public abstract class Unit extends Entity {
         if (logger.isDebugEnabled()) {
             logger.debug("Unit {} attacking {} for {}!", this, enemy, attackPower);
         }
-        if (!enemy.isAlive()) {
-            if (enemy.equals(behaviourTriggerUnit)) {
-                behaviourTriggerUnit = null;
-                currentBehaviour = Behaviour.DEFAULT;
-            }
+        if (!enemy.isAlive() && enemy.equals(behaviourTriggerUnit)) {
+            behaviourTriggerUnit = null;
+            currentBehaviour = Behaviour.DEFAULT;
         }
         for (UnitSubscriber s : subscribers) {
             s.onAttack(this, enemy);
@@ -152,7 +151,7 @@ public abstract class Unit extends Entity {
         this.healthPoints = healthPoints < 0 ? 0 : healthPoints;
     }
 
-    private boolean isAlive() {
+    public boolean isAlive() {
         return healthPoints > 0;
     }
 
@@ -162,6 +161,7 @@ public abstract class Unit extends Entity {
         }
         designatedMovement = null;
     }
+
     private void move(Direction defaultDirection) {
         Direction moveDirection = designatedMovement == null ? defaultDirection : designatedMovement;
         for (int i = 0; i < speed; i++) {
@@ -203,6 +203,9 @@ public abstract class Unit extends Entity {
     }
 
     public void act(GameState gameState) {
+        if (!isAlive()) {
+            return;
+        }
         cooldowns();
         behaviourState(gameState);
         switch (currentBehaviour) {
@@ -244,6 +247,9 @@ public abstract class Unit extends Entity {
     }
 
     private void behaviourState(GameState gameState) {
+        if (!isAlive()) {
+            return;
+        }
         switch (currentBehaviour) {
             case DEFAULT: {
                 // enemy in battle range
@@ -301,6 +307,7 @@ public abstract class Unit extends Entity {
                 }
             }
         }
+
     }
 
     public void subscribe(UnitSubscriber unitSubscriber) {
