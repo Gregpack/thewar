@@ -5,9 +5,6 @@ import ru.gregpack.thewar.model.entities.composite.units.Barrack;
 import ru.gregpack.thewar.model.entities.composite.units.Entity;
 import ru.gregpack.thewar.model.entities.composite.units.Unit;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class FieldCell {
 
     @Getter
